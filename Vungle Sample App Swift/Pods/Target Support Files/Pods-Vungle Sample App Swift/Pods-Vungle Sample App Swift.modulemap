@@ -1,0 +1,6 @@
+framework module Pods_Vungle_Sample_App_Swift {
+  umbrella header "Pods-Vungle Sample App Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
