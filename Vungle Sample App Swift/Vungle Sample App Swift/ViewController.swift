@@ -53,7 +53,6 @@ class ViewController: UIViewController, VungleSDKDelegate {
                 try self.sdk.loadPlacement(withID: kVungleTestPlacementID02)
             }
             catch let error as NSError {
-                print("Error encountered playing ad: + \(error)");
                 print("Unable to load placement with reference ID :\(kVungleTestPlacementID02), Error: \(error)")
                 
                 return
@@ -68,7 +67,6 @@ class ViewController: UIViewController, VungleSDKDelegate {
                 try self.sdk.loadPlacement(withID: kVungleTestPlacementID03)
             }
             catch let error as NSError {
-                print("Error encountered playing ad: + \(error)");
                 print("Unable to load placement with reference ID :\(kVungleTestPlacementID03), Error: \(error)")
                 
                 return
