@@ -28,31 +28,5 @@ Our newest iOS SDK (5.1.0) was released on July 5th, 2017. Please ensure you are
 * Set user-agent in HTTP header to platform user agent for all external requests
 * StoreKit support for MRAID ads
 
-### 4.0.9
-* Fix wrong behavior for the willCloseAdWithViewInfo: delegate method
-* Improved SDK initialization
-* Minor fixes and performance improvements
-* Fix user-agent field on requests
-
-### 4.0.8
-* Refresh the IDFA when app comes to foreground
-* Minor fixes
-
-### 4.0.6
-* Add cache early check to initial operation chain 
-* Prefix 3rd party zip/unzip lib functions 
-* Track and use the didDownload state for legacy ads
-
-### 4.0.5
-* Bug fixes
-* Performance improvement
-
-### 4.0.4
-* iOS 10 OS performance optimizations
-* CloudUX functionality support
-* Vungle unique id implementation to maintain publisher frequency capping
-* Fix click area around CTA button
-
-
 ## License
 The Vungle iOS-SDK is available under a commercial license. See the LICENSE file for more info.
