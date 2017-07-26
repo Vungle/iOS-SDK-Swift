@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		638AE941BD6459DC72B189DB /* Pods_Vungle_Sample_App_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E98A096BD3D191B98CB5E4F /* Pods_Vungle_Sample_App_Swift.framework */; };
 		A8B681171F216DBB004ECE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B681161F216DBB004ECE68 /* AppDelegate.swift */; };
 		A8B681191F216DBB004ECE68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B681181F216DBB004ECE68 /* ViewController.swift */; };
 		A8B6811C1F216DBB004ECE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B6811A1F216DBB004ECE68 /* Main.storyboard */; };
 		A8B6811E1F216DBB004ECE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B6811D1F216DBB004ECE68 /* Assets.xcassets */; };
 		A8B681211F216DBB004ECE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B6811F1F216DBB004ECE68 /* LaunchScreen.storyboard */; };
+		D1E6DC7E1F2938DC005FD47C /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC7D1F2938DC005FD47C /* VungleSDK.framework */; };
+		D1E6DC801F293929005FD47C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC7F1F293929005FD47C /* AdSupport.framework */; };
+		D1E6DC821F293932005FD47C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC811F293932005FD47C /* AudioToolbox.framework */; };
+		D1E6DC841F29393C005FD47C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC831F29393C005FD47C /* AVFoundation.framework */; };
+		D1E6DC861F293944005FD47C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC851F293944005FD47C /* CFNetwork.framework */; };
+		D1E6DC881F29394B005FD47C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC871F29394B005FD47C /* CoreGraphics.framework */; };
+		D1E6DC8A1F293953005FD47C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC891F293953005FD47C /* CoreMedia.framework */; };
+		D1E6DC8C1F29395B005FD47C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC8B1F29395B005FD47C /* Foundation.framework */; };
+		D1E6DC8E1F29396E005FD47C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC8D1F29396E005FD47C /* libz.tbd */; };
+		D1E6DC901F29397D005FD47C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC8F1F29397D005FD47C /* libsqlite3.tbd */; };
+		D1E6DC921F293986005FD47C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC911F293986005FD47C /* MediaPlayer.framework */; };
+		D1E6DC941F29398D005FD47C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC931F29398D005FD47C /* QuartzCore.framework */; };
+		D1E6DC961F293994005FD47C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC951F293994005FD47C /* StoreKit.framework */; };
+		D1E6DC981F29399E005FD47C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC971F29399E005FD47C /* SystemConfiguration.framework */; };
+		D1E6DC9A1F2939A8005FD47C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC991F2939A8005FD47C /* UIKit.framework */; };
+		D1E6DC9C1F2939AF005FD47C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E6DC9B1F2939AF005FD47C /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		43DC2D59D127341A2EDE0259 /* Pods-Vungle Sample App Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vungle Sample App Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vungle Sample App Swift/Pods-Vungle Sample App Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		5E98A096BD3D191B98CB5E4F /* Pods_Vungle_Sample_App_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vungle_Sample_App_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75BCBCEC2AA9ED57B9A4041F /* Pods-Vungle Sample App Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vungle Sample App Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vungle Sample App Swift/Pods-Vungle Sample App Swift.release.xcconfig"; sourceTree = "<group>"; };
 		A832605B1F2592A800C230EA /* Vungle Sample App Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vungle Sample App Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8B681131F216DBB004ECE68 /* Vungle Sample App Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vungle Sample App Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B681161F216DBB004ECE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +39,22 @@
 		A8B6811D1F216DBB004ECE68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8B681201F216DBB004ECE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8B681221F216DBB004ECE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1E6DC7D1F2938DC005FD47C /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VungleSDK.framework; path = ../VungleSDK.framework; sourceTree = "<group>"; };
+		D1E6DC7F1F293929005FD47C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D1E6DC811F293932005FD47C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D1E6DC831F29393C005FD47C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D1E6DC851F293944005FD47C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D1E6DC871F29394B005FD47C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D1E6DC891F293953005FD47C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D1E6DC8B1F29395B005FD47C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D1E6DC8D1F29396E005FD47C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D1E6DC8F1F29397D005FD47C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D1E6DC911F293986005FD47C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D1E6DC931F29398D005FD47C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D1E6DC951F293994005FD47C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D1E6DC971F29399E005FD47C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D1E6DC991F2939A8005FD47C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D1E6DC9B1F2939AF005FD47C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,29 +62,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				638AE941BD6459DC72B189DB /* Pods_Vungle_Sample_App_Swift.framework in Frameworks */,
+				D1E6DC9C1F2939AF005FD47C /* WebKit.framework in Frameworks */,
+				D1E6DC9A1F2939A8005FD47C /* UIKit.framework in Frameworks */,
+				D1E6DC981F29399E005FD47C /* SystemConfiguration.framework in Frameworks */,
+				D1E6DC961F293994005FD47C /* StoreKit.framework in Frameworks */,
+				D1E6DC941F29398D005FD47C /* QuartzCore.framework in Frameworks */,
+				D1E6DC921F293986005FD47C /* MediaPlayer.framework in Frameworks */,
+				D1E6DC901F29397D005FD47C /* libsqlite3.tbd in Frameworks */,
+				D1E6DC8E1F29396E005FD47C /* libz.tbd in Frameworks */,
+				D1E6DC8C1F29395B005FD47C /* Foundation.framework in Frameworks */,
+				D1E6DC8A1F293953005FD47C /* CoreMedia.framework in Frameworks */,
+				D1E6DC881F29394B005FD47C /* CoreGraphics.framework in Frameworks */,
+				D1E6DC861F293944005FD47C /* CFNetwork.framework in Frameworks */,
+				D1E6DC841F29393C005FD47C /* AVFoundation.framework in Frameworks */,
+				D1E6DC821F293932005FD47C /* AudioToolbox.framework in Frameworks */,
+				D1E6DC801F293929005FD47C /* AdSupport.framework in Frameworks */,
+				D1E6DC7E1F2938DC005FD47C /* VungleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AA5E2EB67B64AD202DC532C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				43DC2D59D127341A2EDE0259 /* Pods-Vungle Sample App Swift.debug.xcconfig */,
-				75BCBCEC2AA9ED57B9A4041F /* Pods-Vungle Sample App Swift.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A8B6810A1F216DBB004ECE68 = {
 			isa = PBXGroup;
 			children = (
 				A8B681151F216DBB004ECE68 /* Vungle Sample App Swift */,
-				A8B681141F216DBB004ECE68 /* Products */,
-				6AA5E2EB67B64AD202DC532C /* Pods */,
 				E70F6635D3123EB542357041 /* Frameworks */,
+				A8B681141F216DBB004ECE68 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +118,22 @@
 		E70F6635D3123EB542357041 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E98A096BD3D191B98CB5E4F /* Pods_Vungle_Sample_App_Swift.framework */,
+				D1E6DC9B1F2939AF005FD47C /* WebKit.framework */,
+				D1E6DC991F2939A8005FD47C /* UIKit.framework */,
+				D1E6DC971F29399E005FD47C /* SystemConfiguration.framework */,
+				D1E6DC951F293994005FD47C /* StoreKit.framework */,
+				D1E6DC931F29398D005FD47C /* QuartzCore.framework */,
+				D1E6DC911F293986005FD47C /* MediaPlayer.framework */,
+				D1E6DC8F1F29397D005FD47C /* libsqlite3.tbd */,
+				D1E6DC8D1F29396E005FD47C /* libz.tbd */,
+				D1E6DC8B1F29395B005FD47C /* Foundation.framework */,
+				D1E6DC891F293953005FD47C /* CoreMedia.framework */,
+				D1E6DC871F29394B005FD47C /* CoreGraphics.framework */,
+				D1E6DC851F293944005FD47C /* CFNetwork.framework */,
+				D1E6DC831F29393C005FD47C /* AVFoundation.framework */,
+				D1E6DC811F293932005FD47C /* AudioToolbox.framework */,
+				D1E6DC7F1F293929005FD47C /* AdSupport.framework */,
+				D1E6DC7D1F2938DC005FD47C /* VungleSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,7 +223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		55530B90796465B3C08A0B60 /* [CP] Copy Pods Resources */ = {
@@ -339,14 +387,18 @@
 		};
 		A8B681261F216DBB004ECE68 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43DC2D59D127341A2EDE0259 /* Pods-Vungle Sample App Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GTA9LK7P23;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Vungle Sample App Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vungle Sample App Swift/Vungle Sample App Swift-Bridging-Header.h";
@@ -357,14 +409,18 @@
 		};
 		A8B681271F216DBB004ECE68 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75BCBCEC2AA9ED57B9A4041F /* Pods-Vungle Sample App Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GTA9LK7P23;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Vungle Sample App Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vungle.Vungle-Sample-App-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vungle Sample App Swift/Vungle Sample App Swift-Bridging-Header.h";
