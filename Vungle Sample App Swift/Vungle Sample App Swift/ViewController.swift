@@ -45,8 +45,8 @@ class ViewController: UIViewController, VungleSDKDelegate {
         self.startVungle()
     }
     
-    @IBAction func onLoadButtonTapped(_ sender: Any) {
-        if (sender as! UIButton == self.loadButton2) {
+    @IBAction func onLoadButtonTapped(_ sender: UIButton) {
+        if (sender == self.loadButton2) {
             print("-->> load an ad for placement 02")
             
             do {
@@ -60,7 +60,7 @@ class ViewController: UIViewController, VungleSDKDelegate {
             
             self.updateButtonState(for: self.loadButton2, enabled: false)
         }
-        else if (sender as! UIButton == self.loadButton3) {
+        else if (sender == self.loadButton3) {
             print("-->> load an ad for placement 03")
             
             do {
@@ -76,20 +76,20 @@ class ViewController: UIViewController, VungleSDKDelegate {
         }
     }
     
-    @IBAction func onPlayButtonTapped(_ sender: Any) {
+    @IBAction func onPlayButtonTapped(_ sender: UIButton) {
         self.updateButtonState(for: self.playButton1, enabled: false)
         self.updateButtonState(for: self.playButton2, enabled: false)
         self.updateButtonState(for: self.playButton3, enabled: false)
         
-        if (sender as! UIButton == self.playButton1) {
+        if (sender == self.playButton1) {
             print("-->> play an ad for placement 01")
             self.showAdForPlacement01()
         }
-        else if (sender as! UIButton == self.playButton2) {
+        else if (sender == self.playButton2) {
             print("-->> play an ad for placement 02")
             self.showAdForPlacement02()
         }
-        else if (sender as! UIButton == self.playButton3) {
+        else if (sender == self.playButton3) {
             print("-->> play an ad for placement 03")
             self.showAdForPlacement03()
         }
