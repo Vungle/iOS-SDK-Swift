@@ -206,7 +206,7 @@ class ViewController: UIViewController, VungleSDKDelegate {
         do {
             try self.sdk.playAd(self, options: nil, placementID: kVungleTestPlacementID01)
         }
-        catch let error as NSError {
+        catch let error as NSError { 
              print("Error encountered playing ad: + \(error)");
         }
     }
@@ -215,7 +215,9 @@ class ViewController: UIViewController, VungleSDKDelegate {
         // Play a Vungle ad with muted
         self.sdk.muted = true
         do {
-            try self.sdk.playAd(self, options: nil, placementID: kVungleTestPlacementID02)
+            let orientation = UIInterfaceOrientationMask.landscape.rawValue
+            let options: NSDictionary = NSDictionary(dictionary: [VunglePlayAdOptionKeyOrientations : Int(orientation)])
+            try self.sdk.playAd(self, options: (options as! [AnyHashable : Any]), placementID: kVungleTestPlacementID02)
         }
         catch let error as NSError {
             print("Error encountered playing ad: + \(error)");
