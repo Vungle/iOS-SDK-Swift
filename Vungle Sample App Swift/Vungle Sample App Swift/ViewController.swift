@@ -176,16 +176,11 @@ extension UIButton {
         alpha = enabled ? 1.0 : 0.45
     }
 }
+
 extension ViewController: VungleSDKDelegate {
     // MARK: - VungleSDKDelegate Methods
     func vungleAdPlayabilityUpdate(_ isAdPlayable: Bool, placementID: String?) {
-        if (isAdPlayable) {
-            print("-->> Delegate Callback: vungleAdPlayabilityUpdate: Ad is available for Placement ID: \(String(describing: placementID))");
-        }
-        else {
-            print("-->> Delegate Callback: vungleAdPlayabilityUpdate: Ad is NOT availablefor Placement ID: \(String(describing: placementID))");
-        }
-        
+        print("-->> Delegate Callback: vungleAdPlayabilityUpdate: Ad is \(isAdPlayable ? "" : "NOT") available for Placement ID: \(String(describing: placementID))");
         if (placementID == kVungleTestPlacementID01) {
             playButton1.updateState(enabled: isAdPlayable)
         }
@@ -204,7 +199,6 @@ extension ViewController: VungleSDKDelegate {
         if (placementID == kVungleTestPlacementID01) {
             print("-->> Ad will show for Placement 01")
             playButton1.updateState(enabled: false)
-            
         }
         else if (placementID == kVungleTestPlacementID02) {
             print("-->> Ad will show for Placement 02")
@@ -234,7 +228,7 @@ extension ViewController: VungleSDKDelegate {
         sdk.muted = false
     }
     
-    private func updateButtons () {
+    private func updateButtons() {
         playButton1.updateState(enabled: sdk.isAdCached(forPlacementID: kVungleTestPlacementID01))
         playButton2.updateState(enabled: sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
         loadButton2.updateState(enabled: !sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
