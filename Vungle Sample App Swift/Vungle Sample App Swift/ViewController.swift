@@ -57,8 +57,7 @@ class ViewController: UIViewController {
                 
                 return
             }
-            
-            self.updateButtonState(for: self.loadButton2, enabled: false)
+            loadButton2.updateState(enabled: false)
         }
         else if (sender == self.loadButton3) {
             print("-->> load an ad for placement 03")
@@ -71,15 +70,14 @@ class ViewController: UIViewController {
                 
                 return
             }
-            
-            self.updateButtonState(for: self.loadButton3, enabled: false)
+            loadButton3.updateState(enabled: false)
         }
     }
     
     @IBAction func onPlayButtonTapped(_ sender: UIButton) {
-        self.updateButtonState(for: self.playButton1, enabled: false)
-        self.updateButtonState(for: self.playButton2, enabled: false)
-        self.updateButtonState(for: self.playButton3, enabled: false)
+        playButton1.updateState(enabled: false)
+        playButton2.updateState(enabled: false)
+        playButton3.updateState(enabled: false)
         
         if (sender == self.playButton1) {
             print("-->> play an ad for placement 01")
@@ -112,12 +110,12 @@ class ViewController: UIViewController {
         self.placementIdLabel3.text = kVunglePlacementIDPrefix + kVungleTestPlacementID03
         
         for button in [loadButton2, loadButton3, playButton1, playButton2, playButton3] {
-            updateButtonState(for: button!, enabled: false)
+            button?.updateState(enabled: false)
         }        
     }
     
     private func startVungle () {
-        updateButtonState(for: sdkInitButton, enabled: false)
+        sdkInitButton.updateState(enabled: false)
         self.placementIDsArray = [kVungleTestPlacementID01, kVungleTestPlacementID02, kVungleTestPlacementID03]
         
         self.sdk = VungleSDK.shared()
@@ -128,8 +126,7 @@ class ViewController: UIViewController {
         }
         catch let error as NSError {
             print("Error while starting VungleSDK :  \(error.domain)")
-            
-            self.updateButtonState(for: sdkInitButton, enabled: true)
+            sdkInitButton.updateState(enabled: true)
             return;
         }
     }
@@ -171,21 +168,14 @@ class ViewController: UIViewController {
             print("Error encountered playing ad: + \(error)");
         }
     }
-    
-    fileprivate func updateButtons () {
-        self.updateButtonState(for: self.playButton1, enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID01))
-        self.updateButtonState(for: self.playButton2, enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
-        self.updateButtonState(for: self.loadButton2, enabled: !self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
-        self.updateButtonState(for: self.playButton3, enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID03))
-        self.updateButtonState(for: self.loadButton3, enabled: !self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID03))
-    }
-
-    fileprivate func updateButtonState(for button: UIButton, enabled: Bool) {
-        button.isEnabled = enabled
-        button.alpha = enabled ? 1.0:0.45
-    }
 }
 
+extension UIButton {
+    func updateState(enabled: Bool) {
+        self.isEnabled = enabled
+        self.alpha = enabled ? 1.0 : 0.45
+    }
+}
 extension ViewController: VungleSDKDelegate {
     // MARK: - VungleSDKDelegate Methods
     func vungleAdPlayabilityUpdate(_ isAdPlayable: Bool, placementID: String?) {
@@ -197,57 +187,65 @@ extension ViewController: VungleSDKDelegate {
         }
         
         if (placementID == kVungleTestPlacementID01) {
-            self.updateButtonState(for: self.playButton1, enabled: isAdPlayable)
+            playButton1.updateState(enabled: isAdPlayable)
         }
         else if (placementID == kVungleTestPlacementID02) {
-            self.updateButtonState(for: self.playButton2, enabled: isAdPlayable)
-            self.updateButtonState(for: self.loadButton2, enabled: !isAdPlayable)
+            playButton2.updateState(enabled: isAdPlayable)
+            loadButton2.updateState(enabled: !isAdPlayable)
         }
         else if (placementID == kVungleTestPlacementID03) {
-            self.updateButtonState(for: self.playButton3, enabled: isAdPlayable)
-            self.updateButtonState(for: self.loadButton3, enabled: !isAdPlayable)
+            playButton3.updateState(enabled: isAdPlayable)
+            loadButton3.updateState(enabled: !isAdPlayable)
         }
     }
     
     func vungleWillShowAd(forPlacementID placementID: String?) {
         print("-->> Delegate Callback: vungleSDKwillShowAd")
         if (placementID == kVungleTestPlacementID01) {
-            print("-->> Ad will show for Placment 01")
-            self.updateButtonState(for: self.playButton1, enabled: false)
+            print("-->> Ad will show for Placement 01")
+            playButton1.updateState(enabled: false)
+            
         }
         else if (placementID == kVungleTestPlacementID02) {
-            print("-->> Ad will show for Placment 02")
-            self.updateButtonState(for: self.playButton2, enabled: false)
+            print("-->> Ad will show for Placement 02")
+            playButton2.updateState(enabled: false)
         }
         else if (placementID == kVungleTestPlacementID03) {
-            NSLog("-->> Ad will show for Placment 03")
-            self.updateButtonState(for: self.playButton3, enabled: false)
+            NSLog("-->> Ad will show for Placement 03")
+            playButton3.updateState(enabled: false)
         }
     }
     
     func vungleWillCloseAd(with info: VungleViewInfo, placementID: String) {
         print("-->> Delegate Callback: vungleWillCloseAdWithViewInfo")
         if (placementID == kVungleTestPlacementID01) {
-            print("-->> Ad is closed for Placment 01")
+            print("-->> Ad is closed for Placement 01")
         }
         else if (placementID == kVungleTestPlacementID02) {
-            print("-->> Ad is closed for Placment 02")
+            print("-->> Ad is closed for Placement 02")
         }
         else if (placementID == kVungleTestPlacementID03) {
-            print("-->> Ad is closed for Placment 03")
+            print("-->> Ad is closed for Placement 03")
         }
         
         print("Info about ad viewed: \(info)")
         
-        self.updateButtons()
-        self.sdk.muted = false
+        updateButtons()
+        sdk.muted = false
+    }
+    
+    private func updateButtons () {
+        playButton1.updateState(enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID01))
+        playButton2.updateState(enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
+        loadButton2.updateState(enabled: !self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID02))
+        playButton3.updateState(enabled: self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID03))
+        loadButton3.updateState(enabled: !self.sdk.isAdCached(forPlacementID: kVungleTestPlacementID03))
     }
     
     func vungleSDKDidInitialize() {
         print("-->> Delegate Callback: vungleSDKDidInitialize - SDK initialized SUCCESSFULLY")
-        
-        self.updateButtonState(for: self.loadButton2, enabled: true)
-        self.updateButtonState(for: self.loadButton3, enabled: true)
+        loadButton2.updateState(enabled: true)
+        loadButton3.updateState(enabled: true)
     }
 
 }
