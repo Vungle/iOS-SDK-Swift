@@ -13,6 +13,11 @@ The Vungle iOS SDK supports iOS 8+, both 32bit and 64bit apps.
 Our newest iOS SDK (5.1.0) was released on July 5th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 8.3.3 with Swift 3.1
 
 ## Release Notes
+### 5.1.1
+* Made cache improvements.
+* Updated MOAT framework.
+* Added code to prevent SDK from initializing in iOS 7.
+
 ### 5.1.0
 * Launched new Placements feature.
 * Added Native Flex View ad unit. 
