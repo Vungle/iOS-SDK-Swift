@@ -1,4 +1,14 @@
 ## Changelog
+## VERSION 5.2.0
+* Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
+* Fixed user agent format for internal reporting. 
+* Fixed an issue with application lifecycle that can result in black screens.
+
+## VERSION 5.1.1
+* Made cache improvements
+* Updated MOAT framework
+* Added code to prevent SDK from initializing in iOS 7
+
 ## VERSION 5.1.0
 * Launched new Placements feature.
 * Added Native Flex View ad unit. 
