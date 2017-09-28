@@ -10,10 +10,17 @@ Please refer to https://support.vungle.com/hc/en-us/articles/115000816572
 ### Version Info
 The Vungle iOS SDK supports iOS 8+, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.1.0) was released on July 5th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 8.3.3 with Swift 3.1
+Our newest iOS SDK (5.3.0) was released on September 28th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 8.3.3 with Swift 3.1
 
 ## Release Notes
-## 5.2.0
+
+### 5.3.0
+ * Allow cached ad to play when other placements are downloading. 
+ * Allow cached ad to play when there is no reception. 
+ * Fixed Flex View (ad unit) scaling issue.
+ * Removed background dim in an interactive ad unit.
+
+### 5.2.0
 * Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
 * Fixed user agent format for internal reporting. 
 * Fixed an issue with application lifecycle that can result in black screens.
