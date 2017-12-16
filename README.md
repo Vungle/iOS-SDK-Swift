@@ -10,9 +10,16 @@ Please refer to https://support.vungle.com/hc/en-us/articles/115000816572
 ### Version Info
 The Vungle iOS SDK supports iOS 8+, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.3.0) was released on September 28th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 8.3.3 with Swift 3.1
+Our newest iOS SDK (5.3.2) was released on December 15th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 9.1 with Swift 3.1
 
 ## Release Notes
+
+### 5.3.2
+ * Sleep code to be enforced at placement level
+ * Ordinal data reporting
+ * iOS 11 API for safeAreaLayoutGuide for iPhone X
+ * Ability to close Flex-View ads through API or timer
+ * Bug fixes and performance improvements
 
 ### 5.3.0
  * Allow cached ad to play when other placements are downloading. 
