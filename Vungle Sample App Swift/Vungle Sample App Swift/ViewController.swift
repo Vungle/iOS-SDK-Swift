@@ -120,6 +120,7 @@ class ViewController: UIViewController {
         sdkInitButton.updateState(enabled: false)
         
         sdk = VungleSDK.shared()
+        
         sdk?.delegate = self
         sdk?.setLoggingEnabled(true)
         do {
@@ -214,6 +215,24 @@ extension ViewController: VungleSDKDelegate {
     func vungleWillCloseAd(with info: VungleViewInfo, placementID: String) {
         print("-->> Delegate Callback: vungleWillCloseAdWithViewInfo")
         if (placementID == kVungleTestPlacementID01) {
+            print("-->> Ad will be closed for Placement 01")
+        }
+        else if (placementID == kVungleTestPlacementID02) {
+            print("-->> Ad will be closed for Placement 02")
+        }
+        else if (placementID == kVungleTestPlacementID03) {
+            print("-->> Ad will be closed for Placement 03")
+        }
+        
+        print("Info about ad about to be closed: \(info)")
+        
+        updateButtons()
+        sdk?.muted = false
+    }
+    
+    func vungleDidCloseAd(with info: VungleViewInfo, placementID: String) {
+        print("-->> Delegate Callback: vungleWillCloseAdWithViewInfo")
+        if (placementID == kVungleTestPlacementID01) {
             print("-->> Ad is closed for Placement 01")
         }
         else if (placementID == kVungleTestPlacementID02) {
@@ -226,7 +245,10 @@ extension ViewController: VungleSDKDelegate {
         print("Info about ad viewed: \(info)")
         
         updateButtons()
+        
+        
         sdk?.muted = false
+        
     }
     
     private func updateButtons() {

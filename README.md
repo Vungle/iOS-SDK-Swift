@@ -1,18 +1,31 @@
-# Vungle's iOS-SDK-Swift
+# Vungle's iOS-SDK
 [![Version](https://img.shields.io/cocoapods/v/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 [![License](https://img.shields.io/cocoapods/l/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 
 ## Getting Started
-Please refer to https://support.vungle.com/hc/en-us/articles/115000816572
+Please refer to https://support.vungle.com/hc/en-us/articles/360002925791
 
 
 ### Version Info
-The Vungle iOS SDK supports iOS 8+, both 32bit and 64bit apps.  
+The Vungle iOS SDK supports iOS 8.0 and above, including iOS 11, both 32bit and 64bit apps.  
 
-Our newest iOS SDK (5.3.2) was released on December 15th, 2017. Please ensure you are using Xcode 8.0 or higher to ensure smooth integration. This sample app has been tested on XCode 9.1 with Swift 3.1
+Our newest iOS SDK (6.2.0) was released on April 20th, 2018. Please ensure you are using Xcode 9 to ensure smooth integration.
+Please Note: Xcode 8 does not include support for iPhone X.
 
 ## Release Notes
+
+### 6.2.0
+* GDPR compliance.
+* Removed the requirement to have an auto-cached placement.
+* Removed the requirement to initialize Vungle SDK with all placements.
+* Bug fixes.
+
+### 5.4.0
+* Fixed crashes on iOS 7
+* Fixed crashes around Flex View layout logic
+* Improved Flex View and Flex Feed stability
+* Resolved duplicate symbol error on zipOpen4
 
 ### 5.3.2
  * Sleep code to be enforced at placement level

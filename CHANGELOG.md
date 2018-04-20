@@ -1,17 +1,29 @@
 ## Changelog
 
-### VERSION 5.3.2
- * Sleep code to be enforced at placement level
- * Ordinal data reporting
- * iOS 11 API for safeAreaLayoutGuide for iPhone X
- * Ability to close Flex-View ads through API or timer
- * Bug fixes and performance improvements
+### VERSION 6.2.0
+* GDPR compliance.
+* Removed the requirement to have an auto-cached placement.
+* Removed the requirement to initialize Vungle SDK with all placements.
+* Bug fixes.
+
+## VERSION 5.4.0
+* Fixed crashes on iOS 7
+* Fixed crashes around Flex View layout logic
+* Improved Flex View and Flex Feed stability
+* Resolved duplicate symbol error on zipOpen4
+
+## VERSION 5.3.2
+* Sleep code to be enforced at placement level
+* Ordinal data reporting
+* iOS 11 API for safeAreaLayoutGuide for iPhone X
+* Ability to close Flex-View ads through API or timer
+* Bug fixes and performance improvements
 
 ## VERSION 5.3.0
- * Allow cached ad to play when other placements are downloading. 
- * Allow cached ad to play when there is no reception. 
- * Fixed Flex View (ad unit) scaling issue.
- * Removed background dim in an interactive ad unit.
+* Allow cached ad to play when other placements are downloading. 
+* Allow cached ad to play when there is no reception. 
+* Fixed Flex View (ad unit) scaling issue.
+* Removed background dim in an interactive ad unit.
 
 ## VERSION 5.2.0
 * Fixed a regression of clickedThrough in internal reporting. Advertiser will see accurate clicks in dashboard. 
