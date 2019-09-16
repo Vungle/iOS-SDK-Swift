@@ -124,8 +124,6 @@ class ViewController: UIViewController {
         sdk?.delegate = self
         sdk?.setLoggingEnabled(true)
         do {
-            /*try sdk?.start(withAppId: kVungleTestAppID, placements: [kVungleTestPlacementID01, kVungleTestPlacementID02, kVungleTestPlacementID03])*/
-            
             try sdk?.start(withAppId: kVungleTestAppID);
         }
         catch let error as NSError {
