@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     let kVungleAppIDPrefix = "AppID: "
     let kVunglePlacementIDPrefix = "PlacementID: "
     let kVungleTestAppID = "58fe200484fbd5b9670000e3"
-    let kVungleTestPlacementID01 = "DEFAULT87043" // auto cache placement
-    let kVungleTestPlacementID02 = "PLMT02I05269"
-    let kVungleTestPlacementID03 = "PLMT03R77999"
+    let kVungleTestPlacementID01 = "PLMT01-41570" // auto cache placement
+    let kVungleTestPlacementID02 = "PLMT02-05269"
+    let kVungleTestPlacementID03 = "DEFAULT87043"
 
     @IBOutlet weak var appIdLabel: UILabel!
     @IBOutlet weak var placementIdLabel1: UILabel!
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
         sdk?.delegate = self
         sdk?.setLoggingEnabled(true)
         do {
-            try sdk?.start(withAppId: kVungleTestAppID, placements: [kVungleTestPlacementID01, kVungleTestPlacementID02, kVungleTestPlacementID03])
+            try sdk?.start(withAppId: kVungleTestAppID);
         }
         catch let error as NSError {
             print("Error while starting VungleSDK :  \(error.domain)")

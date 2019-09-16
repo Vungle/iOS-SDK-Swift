@@ -1,5 +1,14 @@
 ## Changelog
 
+### VERSION 6.4.3
+* iOS 13 Support and Enhancements.
+* Cache Optimization — Automatically optimizes ad caching to ensure ads are available faster. No additional work from developer.
+* Introduced new MREC Video placement type to serve higher performing banners.
+* Privacy by Design — Removed latitude and longitude collection.
+* Updated Moat to no longer collect location data.
+* Reduced App Store loading delay to reduce blank loading screens.
+* Removed UIWebView references.
+
 ### VERSION 6.2.0
 * GDPR compliance.
 * License updated

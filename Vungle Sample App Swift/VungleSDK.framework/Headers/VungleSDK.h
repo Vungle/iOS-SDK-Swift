@@ -1,7 +1,7 @@
 //
 //  VungleSDK.h
 //  Vungle iOS SDK
-//  SDK Version: 6.2.0
+//  SDK Version: 6.4.3
 //
 //  Copyright (c) 2013-Present Vungle Inc. All rights reserved.
 //
@@ -72,6 +72,8 @@ typedef enum {
     VungleSDKErrorSDKNotInitialized,
     VungleSDKErrorSleepingPlacement,
     VungleSDKErrorNoAdsAvailable,
+    VungleSDKErrorNotEnoughFileSystemSize,
+    VungleDiscSpaceProviderErrorNoFileSystemAttributes,
 } VungleSDKErrorCode;
 
 typedef NS_ENUM (NSInteger, VungleConsentStatus) {
@@ -109,6 +111,12 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 - (void)vungleWillShowAdForPlacementID:(nullable NSString *)placementID;
 
 /**
+ * If implemented, this will get called when the SDK has just begun showing an ad.
+ * @param placementID The placement which is about to be shown.
+ */
+- (void)vungleDidShowAdForPlacementID:(nullable NSString *)placementID;
+
+/**
  * If implemented, this method gets called when a Vungle Ad Unit is about to be completely dismissed.
  * At this point, it's recommended to resume your Game or App.
  */
@@ -121,7 +129,7 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 
 /**
  * If implemented, this method gets called when a Vungle Ad Unit has been completely dismissed.
- * At this point, you can load another ad for non-auto-cahced placement if necessary.
+ * At this point, you can load another ad for non-auto-cached placement if necessary.
  */
 - (void)vungleDidCloseAdWithViewInfo:(nonnull VungleViewInfo *)info placementID:(nonnull NSString *)placementID;
 
@@ -143,9 +151,9 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 
 @interface VungleSDK : NSObject
 @property (strong) NSDictionary *userData;
-@property (nullable, strong) id<VungleSDKDelegate> delegate;
+@property (nullable, strong) id <VungleSDKDelegate> delegate;
 @property (assign) BOOL muted;
-@property (atomic, readonly, getter=isInitialized) BOOL initialized;
+@property (atomic, readonly, getter = isInitialized) BOOL initialized;
 
 /**
  * Returns the singleton instance.
@@ -153,13 +161,27 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 + (VungleSDK *)sharedSDK;
 
 /**
+ * Sets the publish IDFV flag
+ * This value is persistent and so may be set once.
+ * @param publish whether to publish the IDFV value
+ */
++ (void)setPublishIDFV:(BOOL)publish;
+
+/**
+ * Returns the value of the persistent publish IDFV flag.
+ * @return the current value of the publish IDFV flag
+ */
++ (BOOL)shouldPublishIDFV;
+
+#pragma mark - Initialization
+/**
  * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
  * @param appID the unique identifier for your app
  * @param placements An array of strings representing placements defined in the dashboard.
  * @param error An error object containing information about why initialization failed
  * @return YES if the SDK has started, NO otherwise
  */
-- (BOOL)startWithAppId:(nonnull NSString *)appID placements:(nullable NSArray<NSString *> *)placements error:(NSError **)error  __attribute__((deprecated("Use startWithAppId:appID:error: instead.")));
+- (BOOL)startWithAppId:(nonnull NSString *)appID placements:(nullable NSArray <NSString *> *)placements error:(NSError **)error  __attribute__((deprecated("Use startWithAppId:appID:error: instead.")));
 
 /**
  * Initializes the SDK. You can get your app id on Vungle's dashboard: https://v.vungle.com
@@ -169,6 +191,7 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  */
 - (BOOL)startWithAppId:(nonnull NSString *)appID error:(NSError **)error;
 
+#pragma mark - Interstitial, Flex View Ad playback
 /**
  * Will play Ad Unit presenting it over the `controller` parameter
  * @note This method should only be called using placements with `fullscreen` or `flexview` template types
@@ -179,29 +202,32 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  * @return YES/NO in case of success/error while presenting an AdUnit
  * @warning Should be called from the main-thread.
  */
-- (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
+- (BOOL)playAd:(UIViewController *)controller options:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
-#pragma mark - Flex Feed
+#pragma mark - Flex Feed / MREC Ad lifecycle
 /**
  * Pass in an UIView which acts as a container for the ad experience. This view container may be placed in random positions.
- * @note This method should only be called using placements that have the `flexfeed` template type.
+ * @note This method should only be called using placements that have the `flexfeed` or `mrec` template type. ALSO, for the
+ *      `mrec` template type, note that the UIView must have a width of 300 and a height of 250. If the view is provided without
+ *      these dimensions, an error message will be returned and the ad will not be shown.
  * @param publisherView container view in which an ad will be displayed
  * @param options A reference to an instance of NSDictionary with customized ad playback options
  * @param placementID The placement defined on the Vungle dashboard
  * @param error An optional double reference to an NSError. In case this method returns `NO` it will be non-nil
  * @return YES/NO in case of success/error while presenting an AdUnit
  */
-- (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:( NSError *__autoreleasing _Nullable *_Nullable)error;
+- (BOOL)addAdViewToView:(UIView *)publisherView withOptions:(nullable NSDictionary *)options placementID:(nullable NSString *)placementID error:(NSError *__autoreleasing _Nullable *_Nullable)error;
 
 /**
- * This method will dismiss the currently playing Flex View or Flex Feed advertisement. If you have added an advertisement with `addAdViewToView:`
- * or you are playing a placement that has been configured as a Flex View placement, then this method will remove the advertisement
+ * This method will dismiss the currently playing Flex View, Flex Feed or MREC advertisement. If you have added an advertisement with `addAdViewToView:`
+ * or you are playing a placement that has been configured as a Flex View, Flex Feed or MREC placement, then this method will remove the advertisement
  * from the screen and perform any necessary clean up steps.
  *
  * This method will call the existing delegate callbacks as part of the lifecycle.
  */
 - (void)finishedDisplayingAd;
 
+#pragma mark - Placements support
 /**
  * Returns `YES` when there is certainty that an ad will be able to play for a given placementID.
  * Returning `NO`, you can still try to play and get a streaming Ad.
@@ -217,6 +243,7 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
  */
 - (BOOL)loadPlacementWithID:(NSString *)placementID error:(NSError **)error;
 
+#pragma mark - Utility methods
 /**
  * Returns debug info.
  */
@@ -235,28 +262,37 @@ typedef NS_ENUM (NSInteger, VungleConsentStatus) {
 /**
  * Attach a new logger. It will get called on every log generated by Vungle (internally and externally).
  */
-- (void)attachLogger:(id<VungleSDKLogger>)logger;
+- (void)attachLogger:(id <VungleSDKLogger>)logger;
 
 /**
  * Detaches a logger. Make sure to do this, otherwise you might leak memory.
  */
-- (void)detachLogger:(id<VungleSDKLogger>)logger;
+- (void)detachLogger:(id <VungleSDKLogger>)logger;
 
 /**
  * This only works on the simulator
  */
 - (void)clearSleep;
 
+#pragma mark - GDPR support
 /**
- * This method takes consent status of users. If consented, Vungle will be able to send target ads.
- * @param enum type of user consent status.
+ * This method takes the consent status of users. If consent is given, Vungle will be able to send targeted ads.
+ * @param status the enum to be set for user consent status.
+ * @param version the string to be set for publisher's consent version. It can be any string value.
  */
-- (void)updateConsentStatus:(VungleConsentStatus)status;
+- (void)updateConsentStatus:(VungleConsentStatus)status consentMessageVersion:(NSString *)version;
 
 /**
- * This method returns the current consent status recorded in SDK. If not status is not known return 0. 
+ * This method returns the current consent status for the user recorded in the SDK. If no status is found,
+ *  the method returns 0.
  */
-- (VungleConsentStatus) getCurrentConsentStatus;
+- (VungleConsentStatus)getCurrentConsentStatus;
+
+/**
+ * This method returns the current consent message version that recorded in the SDK. If not version info found,
+ *  the method returns nil.
+ */
+- (NSString *)getConsentMessageVersion;
 
 @end
 
