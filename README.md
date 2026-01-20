@@ -1,3 +1,11 @@
+# **Deprecated**
+
+This repository is **no longer maintained** and is kept for **historical reference only**.
+
+**Do not use the integration examples in this repository for new integrations.**
+
+Please refer to the **VungleAds-SDK** Samples repository for help integrating our 7.x SDK versions here: https://github.com/Vungle/VungleAds-SDK
+
 # Vungle's iOS-SDK
 [![Version](https://img.shields.io/cocoapods/v/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
 [![License](https://img.shields.io/cocoapods/l/VungleSDK-iOS.svg?style=flat)](http://cocoapods.org/pods/VungleSDK-iOS)
